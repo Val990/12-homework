@@ -41,15 +41,6 @@ class ProductManagerTest {
         assertArrayEquals(expected, actual);
     }
 
-    @Test
-    public void shouldSearchByBookAuthor() {
-
-        Product[] actual = manager.searchBy("Jerome");
-        Product[] expected = new Product[]{book2};
-
-        assertArrayEquals(expected, actual);
-    }
-
 
     @Test
     public void shouldFindTheSameManufacturer() {
@@ -65,18 +56,6 @@ class ProductManagerTest {
 
         Product[] expected = new Product[]{};
         Product[] actual = manager.searchBy("!!!");
-
-        assertArrayEquals(expected, actual);
-    }
-
-
-
-    @Test
-    void shouldSearchBookByName() {
-
-        Product[] expected = new Book[]{book1};
-        Product[] actual = manager.searchBy("Jane Eyre");
-
 
         assertArrayEquals(expected, actual);
     }
@@ -131,11 +110,6 @@ class ProductManagerTest {
         Product[] actual = manager.searchBy("Poug");
 
         assertArrayEquals(expected, actual);
-    }
-
-
-    @Test
-    public void shouldUseNoArgsConstructor() {
     }
 }
 
