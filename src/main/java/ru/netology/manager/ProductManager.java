@@ -13,18 +13,16 @@ import ru.netology.repository.ProductRepository;
 @Data
 public class ProductManager {
 
-    private ProductRepository items;
+    private ProductRepository repository;
 
-    public ProductManager() {
-    }
 
     public void add(Product item) {
-        items.save(item);
+        repository.save(item);
     }
 
     public Product[] searchBy(String text) {
         Product[] result = new Product[0];
-        for (Product item : items.getAll()) {
+        for (Product item : repository.getAll()) {
             if (matches(item, text)) {
                 Product[] tmp = new Product[result.length + 1];
                 System.arraycopy(result, 0, tmp, 0, result.length);
